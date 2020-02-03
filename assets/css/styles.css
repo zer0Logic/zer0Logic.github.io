@@ -1,0 +1,270 @@
+@font-face {
+  font-family: 'Product Sans Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Regular'), url('../fonts/ProductSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Italic'), url('../fonts/ProductSans-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Thin Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Thin Regular'), url('../fonts/ProductSans-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Light Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Light Regular'), url('../fonts/ProductSans-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Medium Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Medium Regular'), url('../fonts/ProductSans-Medium.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Product Sans Black Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Black Regular'), url('../fonts/ProductSans-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Thin Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Thin Italic'), url('../fonts/ProductSans-ThinItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Light Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Light Italic'), url('../fonts/ProductSans-LightItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Medium Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Medium Italic'), url('../fonts/ProductSans-MediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Bold'), url('../fonts/ProductSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Bold Italic'), url('../fonts/ProductSans-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Black Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Black Italic'), url('../fonts/ProductSans-BlackItalic.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: "Product Sans Regular", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f8f9fa;
+  color: rgb(116, 114, 114);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a { text-decoration: none; }
+a, a:hover, a:active, a:focus,
+object,
+embed { outline: 0; }
+input::-moz-focus-inner,
+button::-moz-focus-inner { border: 0; }
+.card {
+  width: 300px;
+  height: 400px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: -4px -2px 4px 0px #ffffff,
+               4px  2px 6px 0px #dfe4ea;
+  position: relative;
+  overflow: hidden;
+}
+.card .card__img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin: 30px auto;
+  display: block;
+  border: 3px solid #ffffff;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0 , 0.07),
+              -20px -20px 20px rgba(255, 255, 255, 0.7),
+              6px 6px 6px rgba(0, 0, 0, 0.09),
+              -6px -6px 6px rgba(255, 255, 255, 0.9),
+              inset 5px 5px 5px rgba(0, 0, 0, 0.07),
+              inset -5px -5px 5px rgba(255, 255, 255, 0.7);
+}
+.card .card__content {
+  padding: 0 1.25rem;
+  text-align: center;
+}
+.card .card__name {
+  margin-top: 2rem;
+  color: #8ac6d1;
+  text-transform: capitalize;
+  font-family: "Product Sans Black Regular", sans-serif;
+  font-weight: normal;
+  font-size: 1.25rem !important;
+}
+.card .card__desc {
+  text-transform: capitalize;
+  color: #747272;
+  font-size: 0.9rem;
+}
+.card .card__list {
+  list-style: none;
+  margin: 2.5rem 0;
+}
+.card .card__item {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #dfe4ea;
+}
+.card .card__item:last-child {
+  margin-right: 0;
+}
+.card .card__item:hover::after,
+.card .card__item:active::after,
+.card .card__item:focus::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px 0px #dfe4ea inset,
+             -2px -2px 2px 0px #ffffff inset;
+}
+.card .card__item a { z-index: 10; }
+.card .card__item img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+.card .card__button {
+  position: relative;
+  outline: none;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  font-size: 1.15rem;
+  box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #dfe4ea;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+}
+.card .card__button:active::after,
+.card .card__button:focus::after,
+.card .card__button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 1s;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 0px #dfe4ea inset,
+             -2px -2px 2px 0px #ffffff inset;
+}
+/* modal */
+.modal {
+  position: fixed;
+  background-color: #f8f9fa;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal .modal__content {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2rem;
+  background-color: #f8f9fa;
+  box-shadow: -4px -2px 4px 0px #ffffff,
+               4px  2px 6px 0px #dfe4ea;
+}
+.modal .modal__close {
+  color: #f67280;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal .modal__title {
+  color: #8ac6d1;
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+.modal .modal__desc span {
+  color: #8ac6d1;
+}
+@media (max-width: 575.98px) {
+  .modal .modal__content {
+    width: 300px;
+  }
+}
