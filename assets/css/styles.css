@@ -90,6 +90,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*::selection,
+*::-moz-selection { background-color: #8ac6d1; color: #ffffff; }
 body {
   font-family: "Product Sans Regular", sans-serif;
   height: 100vh;
