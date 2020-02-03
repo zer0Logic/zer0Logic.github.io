@@ -97,6 +97,7 @@ body {
   background-color: #f8f9fa;
   color: rgb(116, 114, 114);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -106,6 +107,19 @@ object,
 embed { outline: 0; }
 input::-moz-focus-inner,
 button::-moz-focus-inner { border: 0; }
+.color-blue { color: #8ac6d1; }
+.color-shade { color: #dfe4ea; }
+.date {
+  margin-bottom: 1rem;
+  width: 300px;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  box-shadow: -4px -2px 4px 0px #ffffff,
+               4px  2px 6px 0px #dfe4ea;
+  border-radius: 5px;
+}
 .card {
   width: 300px;
   height: 400px;
@@ -259,9 +273,6 @@ button::-moz-focus-inner { border: 0; }
   color: #8ac6d1;
   font-size: 2rem;
   margin: 0 0 1rem;
-}
-.modal .modal__desc span {
-  color: #8ac6d1;
 }
 @media (max-width: 575.98px) {
   .modal .modal__content {

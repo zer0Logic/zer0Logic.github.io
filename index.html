@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fadil's personal page</title>
-  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <script type='text/javascript'>
     var isCtrl = false;
     document.onkeyup=function(e)
@@ -39,6 +39,9 @@
   </script>
 </head>
 <body>
+  <div class="date">
+    <span id="day"></span>, <span id="date" class="color-blue"></span> <span id="year"></span> <span class="color-shade">|</span> <span id="hours"></span>
+  </div>
   <div class="card">
     <img src="assets/imgs/user.png" class="card__img" alt="">
     <div class="card__content">
@@ -69,18 +72,24 @@
     <div class="modal__content">
       <a href="#" title="Close" class="modal__close">Close</a>
       <h1 class="modal__title">Thanks!</h1>
-      <p class="modal__desc">Thank you for visiting my simple website, <span>Kamu luar biasa</span>!</p>
+      <p class="modal__desc">Thank you for visiting my simple website, <span class="color-blue">Kamu luar biasa</span>!</p>
     </div>
   </div>
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="assets/js/moment-with-locales.min.js"></script>
 	<script>
-    $(document).ready(function() {
-      $("body").on("contextmenu", "img", function(e){ return false; });
-      $("body").on("contextmenu",function(e){ return false; });
-      $("body").bind("cut copy paste", function (e) {
-        e.preventDefault();
-      });
-    });
-  </script> -->
+    moment.locale('id');
+    // var days = moment().format("dddd, Do MMM YYYY | h:mm a");
+  
+    var day = moment().format("dddd");
+    var date = moment().format("Do MMM");
+    var year = moment().format("YYYY");
+    var update = function() {
+      document.getElementById('hours').innerHTML = moment().format("h:mm:ss a");
+    }
+    document.getElementById('day').innerHTML = day;
+    document.getElementById('date').innerHTML = date;
+    document.getElementById('year').innerHTML = year;
+    setInterval(update, 1000);
+  </script>
 </body>
 </html>
