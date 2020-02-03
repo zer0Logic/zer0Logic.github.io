@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fadil's personal page</title>
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+<body>
+  <div class="card">
+    <img src="assets/imgs/user.png" class="card__img" alt="">
+    <div class="card__content">
+      <h5 class="card__name">Achmad Fadili</h5>
+      <p class="card__desc">Frontend developer</p>
+      <ul class="card__list">
+        <li class="card__item">
+          <a href="https://facebook.com/ampersandzee" target="_blank">
+            <img src="assets/imgs/fb.png" alt="">
+          </a>
+        </li>
+        <li class="card__item">
+          <a href="https://www.instagram.com/_ampersandz/" target="_blank">
+            <img src="assets/imgs/ig.png" alt="">
+          </a>
+        </li>
+        <li class="card__item">
+          <a href="https://steamcommunity.com/id/_ampersandz/" target="_blank">
+            <img src="assets/imgs/steam.png" alt="">
+          </a>
+        </li>
+      </ul>
+      <a href="#modal" class="card__button">Just button</a>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal__content">
+      <a href="#" title="Close" class="modal__close">Close</a>
+      <h1 class="modal__title">Thanks!</h1>
+      <p class="modal__desc">Thank you for visiting my simple website, <span>Kamu luar biasa</span>!</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+	<script>
+    $(document).ready(function() {
+      $('body').on('contextmenu', 'img', function(e){ return false; });
+    });
+  </script>
+</body>
+</html>
