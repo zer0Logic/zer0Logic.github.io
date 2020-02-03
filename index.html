@@ -6,6 +6,37 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fadil's personal page</title>
   <link rel="stylesheet" href="assets/css/styles.min.css">
+  <script type='text/javascript'>
+    var isCtrl = false;
+    document.onkeyup=function(e)
+    {
+    if(e.which == 17)
+    isCtrl=false;
+    }
+    document.onkeydown=function(e)
+    {
+    if(e.which == 17)
+    isCtrl=true;
+    if((e.which == 85) || (e.which == 67) && isCtrl == true)
+    {
+    // alert(&#8216;Keyboard shortcuts are cool!&#8217;);
+    return false;
+    }
+    }
+    var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+    if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+    function mischandler(){
+    return false;
+    }
+    function mousehandler(e){
+    var myevent = (isNS) ? e : event;
+    var eventbutton = (isNS) ? myevent.which : myevent.button;
+    if((eventbutton==2)||(eventbutton==3)) return false;
+    }
+    document.oncontextmenu = mischandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+  </script>
 </head>
 <body>
   <div class="card">
@@ -41,11 +72,15 @@
       <p class="modal__desc">Thank you for visiting my simple website, <span>Kamu luar biasa</span>!</p>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 	<script>
     $(document).ready(function() {
-      $('body').on('contextmenu', 'img', function(e){ return false; });
+      $("body").on("contextmenu", "img", function(e){ return false; });
+      $("body").on("contextmenu",function(e){ return false; });
+      $("body").bind("cut copy paste", function (e) {
+        e.preventDefault();
+      });
     });
-  </script>
+  </script> -->
 </body>
 </html>
