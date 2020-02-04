@@ -5,38 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fadil's personal page</title>
+  <link rel="stylesheet" href="assets/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script type='text/javascript'>
-    var isCtrl = false;
-    document.onkeyup=function(e)
-    {
-    if(e.which == 17)
-    isCtrl=false;
-    }
-    document.onkeydown=function(e)
-    {
-    if(e.which == 17)
-    isCtrl=true;
-    if((e.which == 85) || (e.which == 67) && isCtrl == true)
-    {
-    // alert(&#8216;Keyboard shortcuts are cool!&#8217;);
-    return false;
-    }
-    }
-    var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-    if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
-    function mischandler(){
-    return false;
-    }
-    function mousehandler(e){
-    var myevent = (isNS) ? e : event;
-    var eventbutton = (isNS) ? myevent.which : myevent.button;
-    if((eventbutton==2)||(eventbutton==3)) return false;
-    }
-    document.oncontextmenu = mischandler;
-    document.onmousedown = mousehandler;
-    document.onmouseup = mousehandler;
-  </script>
 </head>
 <body>
   <div class="date">
@@ -47,23 +17,17 @@
     <div class="card__content">
       <h5 class="card__name">Achmad Fadili</h5>
       <p class="card__desc">Frontend developer</p>
-      <ul class="card__list">
-        <li class="card__item">
-          <a href="https://facebook.com/ampersandzee" target="_blank">
-            <img src="assets/imgs/fb.png" alt="">
-          </a>
-        </li>
-        <li class="card__item">
-          <a href="https://www.instagram.com/_ampersandz/" target="_blank">
-            <img src="assets/imgs/ig.png" alt="">
-          </a>
-        </li>
-        <li class="card__item">
-          <a href="https://steamcommunity.com/id/_ampersandz/" target="_blank">
-            <img src="assets/imgs/steam.png" alt="">
-          </a>
-        </li>
-      </ul>
+      <div class="card__list">
+        <a href="https://facebook.com/ampersandzee" target="_blank" class="card__item">
+          <i class="fab fa-fw fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/_ampersandz" target="_blank" class="card__item">
+          <i class="fab fa-fw fa-instagram"></i>
+        </a>
+        <a href="https://steamcommunity.com/id/_ampersandz" target="_blank" class="card__item">
+          <i class="fab fa-fw fa-steam"></i>
+        </a>
+      </div>
       <a href="#modal" class="card__button">Just button</a>
     </div>
   </div>
@@ -77,9 +41,29 @@
   </div>
   <script src="assets/js/moment-with-locales.min.js"></script>
 	<script>
+    var isCtrl = false;
+    document.onkeyup=function(e) {
+      if(e.which == 17) { isCtrl=false; }
+    }
+    document.onkeydown=function(e) {
+      if(e.which == 17) { isCtrl=true; }
+      if((e.which == 85) || (e.which == 67) && isCtrl == true) { return false; }
+    }
+    var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+    if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+    function mischandler(){
+      return false;
+    }
+    function mousehandler(e){
+      var myevent = (isNS) ? e : event;
+      var eventbutton = (isNS) ? myevent.which : myevent.button;
+      if((eventbutton==2)||(eventbutton==3)) { return false; }
+    }
+    document.oncontextmenu = mischandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+
     moment.locale('id');
-    // var days = moment().format("dddd, Do MMM YYYY | h:mm a");
-  
     var day = moment().format("dddd");
     var date = moment().format("Do MMM");
     var year = moment().format("YYYY");
